@@ -8,7 +8,7 @@ public class VehiclesSpawner : MonoBehaviour
 {
     public Vehicles vehicle;
 
-    public int SpawnTime;
+    public float SpawnTime;
     public int orientacao = -1;
 
     void Start()
@@ -21,7 +21,7 @@ public class VehiclesSpawner : MonoBehaviour
 
     void GetTimeSpawn()
     {
-        SpawnTime = Mathf.Abs(vehicle.speed) - 1;
+        SpawnTime = Mathf.Abs(vehicle.speed) / 2.5f;
     }
 
     void SetVehicleOrientation()

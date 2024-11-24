@@ -1,31 +1,7 @@
 fileFormatVersion: 2
-guid: b65ae11b3b159c8499f9d3b72ea60628
+guid: db9d8efb1c56bf54bae24bc22bb15158
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2820143329777312509
-    second: Frog_0
-  - first:
-      213: -1081280975163990012
-    second: Frog_1
-  - first:
-      213: -8937333279313398460
-    second: Frog_2
-  - first:
-      213: 2012254204448798509
-    second: Frog_3
-  - first:
-      213: -3072931601937957618
-    second: Frog_4
-  - first:
-      213: -4292050155679725338
-    second: Frog_5
-  - first:
-      213: -3970644508504664309
-    second: Frog_6
-  - first:
-      213: -8854543777015069593
-    second: Frog_7
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -117,45 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -164,18 +101,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 35
-        width: 33
-        height: 33
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: df2601baa69232720800000000000000
-      internalID: 2820143329777312509
+      spriteID: 0bed435055b796d4bae89096504a5eff
+      internalID: 875668679
       vertices: []
       indices: 
       edges: []
@@ -184,19 +121,19 @@ TextureImporter:
       name: Frog_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 37
-        width: 29
-        height: 28
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 40066f49ea48ef0f0800000000000000
-      internalID: -1081280975163990012
+      spriteID: 49336645d89e6c44e93e2b0c888f93c5
+      internalID: 1093830247
       vertices: []
       indices: 
       edges: []
@@ -205,19 +142,19 @@ TextureImporter:
       name: Frog_2
       rect:
         serializedVersion: 2
-        x: 61
-        y: 36
-        width: 34
+        x: 64
+        y: 32
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4457f370cb638f380800000000000000
-      internalID: -8937333279313398460
+      spriteID: d14dcb133afa9ee4798944c318c919d8
+      internalID: -903542464
       vertices: []
       indices: 
       edges: []
@@ -226,19 +163,19 @@ TextureImporter:
       name: Frog_3
       rect:
         serializedVersion: 2
-        x: 99
-        y: 38
-        width: 28
-        height: 29
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d27f4fd9986fceb10800000000000000
-      internalID: 2012254204448798509
+      spriteID: 420a7cbe1f58fe34eb92cec7b4012908
+      internalID: -1014920296
       vertices: []
       indices: 
       edges: []
@@ -247,19 +184,19 @@ TextureImporter:
       name: Frog_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 34
-        height: 33
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e0d7a673df0ca55d0800000000000000
-      internalID: -3072931601937957618
+      spriteID: 8c02ade708a4b97478aeeab00ccc0150
+      internalID: -1324898941
       vertices: []
       indices: 
       edges: []
@@ -268,19 +205,19 @@ TextureImporter:
       name: Frog_5
       rect:
         serializedVersion: 2
-        x: 35
-        y: 4
-        width: 28
-        height: 29
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6e8cc88af139f64c0800000000000000
-      internalID: -4292050155679725338
+      spriteID: 04a0d2a6345f5ea45bdac0e11a6c5c93
+      internalID: 1930495563
       vertices: []
       indices: 
       edges: []
@@ -290,18 +227,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 1
-        width: 33
-        height: 34
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b07593d5bdf65e8c0800000000000000
-      internalID: -3970644508504664309
+      spriteID: 93bacaac8ffcf1c4883e1100ec67fc6f
+      internalID: 1098775411
       vertices: []
       indices: 
       edges: []
@@ -310,19 +247,19 @@ TextureImporter:
       name: Frog_7
       rect:
         serializedVersion: 2
-        x: 97
-        y: 4
-        width: 29
-        height: 28
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7640fd229575e1580800000000000000
-      internalID: -8854543777015069593
+      spriteID: cafe29978e926d14bbf599e9804ea5f4
+      internalID: -1392540549
       vertices: []
       indices: 
       edges: []
@@ -330,7 +267,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -338,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Frog_0: 2820143329777312509
-      Frog_1: -1081280975163990012
-      Frog_2: -8937333279313398460
-      Frog_3: 2012254204448798509
-      Frog_4: -3072931601937957618
-      Frog_5: -4292050155679725338
-      Frog_6: -3970644508504664309
-      Frog_7: -8854543777015069593
+      Frog_0: 875668679
+      Frog_1: 1093830247
+      Frog_2: -903542464
+      Frog_3: -1014920296
+      Frog_4: -1324898941
+      Frog_5: 1930495563
+      Frog_6: 1098775411
+      Frog_7: -1392540549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

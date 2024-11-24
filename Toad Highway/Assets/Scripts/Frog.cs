@@ -11,16 +11,16 @@ public class Frog : MonoBehaviour
 {
     public Rigidbody2D body;
     public int points;
-    private bool isdead = false;
+    public bool isdead = false;
     private float moveSapce = 1;
     private Vector3 target;
 
     private PointsScript ptScript;
+    private HungerController hgrControl;
 
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
+        GettingThings(); //it gets things
         target = new Vector3(0f, -4f, 0f);
     }
 
@@ -33,6 +33,13 @@ public class Frog : MonoBehaviour
             MovementInbounds();
             transform.position = new Vector3(target.x, target.y, 0f);
         }
+    }
+
+    void GettingThings()
+    {
+        body = GetComponent<Rigidbody2D>();
+        ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
+        hgrControl = GetComponent<HungerController>();
     }
 
     public void MovementInbounds()
@@ -79,6 +86,12 @@ public class Frog : MonoBehaviour
         }
     }
 
+    public void kill()
+    {
+        Destroy(gameObject);
+        isdead = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Vehicles"))
@@ -88,9 +101,8 @@ public class Frog : MonoBehaviour
             {
                 Debug.Log("Touched");
                 Debug.Log("Collision with: " + collision.gameObject.name);
-                Destroy(gameObject);
                 vehicles.StopMovement();
-                isdead = true;
+                kill();
             }
         }
         else if (collision.gameObject.CompareTag("Fly"))
@@ -100,6 +112,7 @@ public class Frog : MonoBehaviour
             {
                 fly.Place();
                 ptScript.points++;
+                hgrControl.hungerValue += 2;
             }
         }
         else if (collision.gameObject.CompareTag("Bettle"))
@@ -109,6 +122,7 @@ public class Frog : MonoBehaviour
             {
                 bettle.Hit();
                 ptScript.points += 3;
+                hgrControl.hungerValue += 5;
             }
         }
         else if (collision.gameObject.CompareTag("Maggot"))
@@ -118,6 +132,7 @@ public class Frog : MonoBehaviour
             {
                 maggot.Catch();
                 ptScript.points += 5;
+                hgrControl.hungerValue *= 1.5f;
             }
         }
     }

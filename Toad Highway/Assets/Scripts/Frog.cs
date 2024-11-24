@@ -10,10 +10,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Frog : MonoBehaviour
 {
     public Rigidbody2D body;
-    private Vector3 target;
     public int points;
+    private bool isdead = false;
     private float moveSapce = 1;
-    public bool isdead = false; // verificar
+    private Vector3 target;
 
     private PointsScript ptScript;
 

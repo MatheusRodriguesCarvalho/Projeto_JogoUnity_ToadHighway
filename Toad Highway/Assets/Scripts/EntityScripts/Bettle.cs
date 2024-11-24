@@ -6,7 +6,7 @@ public class Bettle : MonoBehaviour
 {
     public int x = 6;
     public int y = 1;
-    public float spawnTime = 3;
+    public float spawnTime = 1.5f;
     public Rigidbody2D body;
 
     void Start()

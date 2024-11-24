@@ -10,18 +10,14 @@ public class VehiclesSpawner : MonoBehaviour
 
     public float SpawnTime;
     public int orientacao;
+    public int maxSpeed = 11;
 
     void Start()
     {
-        GetTimeSpawn();
         GetOrientation();
         SetVehicleOrientation();
+        GetTimeSpawn();
         InvokeRepeating("CreateVehicle", SpawnTime, SpawnTime);
-    }
-
-    void GetTimeSpawn()
-    {
-        SpawnTime = Mathf.Abs(vehicle.speed) / 2f;
     }
 
     void GetOrientation()
@@ -32,26 +28,43 @@ public class VehiclesSpawner : MonoBehaviour
 
     void SetVehicleOrientation()
     {
+        vehicle.speed = Random.Range(3, maxSpeed);
         vehicle.speed = Mathf.Abs(vehicle.speed) * orientacao;
+    }
+
+    void GetTimeSpawn()
+    {
+        float x = Mathf.Abs(vehicle.speed) / 2f;
+        if( x > 2)
+        {
+            SpawnTime = Random.Range(2, x + 1);
+            //SpawnTime *= 0.95f;
+        }
+        else
+        {
+            SpawnTime = 2f;
+        }
     }
 
     void CreateVehicle()
     {
         var SpawnPoint = new Vector2(transform.position.x, transform.position.y);
         var Rotation = Quaternion.identity;
-        if (orientacao < 0)
+        
+        if (orientacao > 0)
         {
-            Rotation = Quaternion.Euler(transform.position.x, transform.position.y * -1, transform.position.z);
+            Rotation = Quaternion.Euler(0f, 0f, 180f);
         }
 
-        Instantiate(vehicle, SpawnPoint, Quaternion.identity);//TODO ser capaz de inverter o veiculo no eixo y
+        Instantiate(vehicle, SpawnPoint, Rotation);
+
         IncreaseDificulty();
     }
 
     void IncreaseDificulty()
     {
-        vehicle.speed *= 1.001f;
-        SpawnTime *=  0.97f;
+        vehicle.speed *= 1.005f;
+        //SpawnTime *= 0.90f;
     }
 
 }

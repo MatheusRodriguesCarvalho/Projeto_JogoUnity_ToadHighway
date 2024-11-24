@@ -15,14 +15,15 @@ public class Frog : MonoBehaviour
     private float moveSapce = 1;
     public bool isdead = false; // verificar
 
+    private PointsScript ptScript;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-
+        ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
         target = new Vector3(0f, -4f, 0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isdead)
@@ -98,7 +99,7 @@ public class Frog : MonoBehaviour
             if (fly != null)
             {
                 fly.Place();
-                points += 1;
+                ptScript.points++;
             }
         }
         else if (collision.gameObject.CompareTag("Bettle"))
@@ -107,7 +108,16 @@ public class Frog : MonoBehaviour
             if (bettle != null)
             {
                 bettle.Hit();
-                points += 1;
+                ptScript.points += 3;
+            }
+        }
+        else if (collision.gameObject.CompareTag("Maggot"))
+        {
+            Maggot maggot = collision.GetComponent<Maggot>();
+            if (maggot != null)
+            {
+                maggot.Catch();
+                ptScript.points += 5;
             }
         }
     }

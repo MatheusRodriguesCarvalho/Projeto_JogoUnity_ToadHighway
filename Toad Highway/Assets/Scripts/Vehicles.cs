@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Vehicles : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     private Rigidbody2D body;
 
     void Start()
@@ -39,9 +39,5 @@ public class Vehicles : MonoBehaviour
                 bettle.Hit();
             }
         }
-
-
-
     }
-
 }

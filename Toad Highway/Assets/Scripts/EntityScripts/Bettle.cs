@@ -6,16 +6,17 @@ public class Bettle : MonoBehaviour
 {
     public int x = 6;
     public int y = 1;
+    public float spawnTime = 3;
+    public Rigidbody2D body;
+
+    void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
 
     public void Hit()
     {
         Destroy(gameObject);
-    }
-    public void Place()
-    {
-        int randomX = Random.Range(-x, x + 1);
-        int randomY = Random.Range(+y, y + 2);
-        transform.position = new Vector3(randomX, randomY, 0f);
     }
 
 }

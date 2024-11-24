@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Maggot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int x = 6;
+    public int y = 4;
+    public float spawnTime = 6;
+    public Rigidbody2D body;
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        Destroy(gameObject, 3f);
+        body = GetComponent<Rigidbody2D>();
+    }
+    public void Catch()
+    {
+        Destroy(gameObject);
     }
 }

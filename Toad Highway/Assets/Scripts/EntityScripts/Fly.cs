@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
-    public Vector3 pos;
     public int x = 5;
     public int y = 3;
     public Rigidbody2D body;

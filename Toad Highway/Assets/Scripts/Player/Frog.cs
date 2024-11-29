@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class Frog : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class Frog : MonoBehaviour
     public int points;
     public bool isdead = false;
     private float moveSapce = 1;
+    private int flyStreak = 1;
     private Vector3 target;
 
+    public Animator playerAnimator;
     private PointsScript ptScript;
     private HungerController hgrControl;
 
@@ -40,10 +43,12 @@ public class Frog : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
         hgrControl = GetComponent<HungerController>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     public void MovementInbounds()
     {
+        //mathf.clamp(x,1,3);
         if (target.x > 6)
         {
             target.x -= moveSapce;
@@ -67,10 +72,14 @@ public class Frog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             target.x -= moveSapce;
+            playerAnimator.SetFloat("xinput", -1f);
+            playerAnimator.SetFloat("yinput", 0f);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             target.x += moveSapce;
+            playerAnimator.SetFloat("xinput", 1f);
+            playerAnimator.SetFloat("yinput", 0f);
         }
     }
 
@@ -79,10 +88,14 @@ public class Frog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             target.y += moveSapce;
+            playerAnimator.SetFloat("xinput", 0f);
+            playerAnimator.SetFloat("yinput", 1f);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             target.y -= moveSapce;
+            playerAnimator.SetFloat("xinput", 0f);
+            playerAnimator.SetFloat("yinput", -1f);
         }
     }
 
@@ -99,10 +112,11 @@ public class Frog : MonoBehaviour
             Vehicles vehicles = collision.GetComponent<Vehicles>();
             if (vehicles != null)
             {
-                Debug.Log("Touched");
-                Debug.Log("Collision with: " + collision.gameObject.name);
-                vehicles.StopMovement();
+                //Debug.Log("Touched");
+                //Debug.Log("Collision with: " + collision.gameObject.name);
+                //vehicles.StopMovement();
                 kill();
+                SceneManager.LoadScene("MenuPrincipal");
             }
         }
         else if (collision.gameObject.CompareTag("Fly"))
@@ -110,9 +124,10 @@ public class Frog : MonoBehaviour
             Fly fly = collision.GetComponent<Fly>();
             if (fly != null)
             {
-                fly.Place();
-                ptScript.points++;
-                hgrControl.hungerValue += 2;
+                fly.Replace();
+                ptScript.points += 1 * flyStreak;
+                flyStreak *= 2;
+                hgrControl.hunger += 0;
             }
         }
         else if (collision.gameObject.CompareTag("Bettle"))
@@ -121,8 +136,9 @@ public class Frog : MonoBehaviour
             if (bettle != null)
             {
                 bettle.Hit();
-                ptScript.points += 3;
-                hgrControl.hungerValue += 5;
+                ptScript.points += 10;
+                hgrControl.hunger += 5;
+                flyStreak = 1;
             }
         }
         else if (collision.gameObject.CompareTag("Maggot"))
@@ -131,8 +147,9 @@ public class Frog : MonoBehaviour
             if (maggot != null)
             {
                 maggot.Catch();
-                ptScript.points += 5;
-                hgrControl.hungerValue *= 1.5f;
+                ptScript.points += 4;
+                hgrControl.hunger *= 1.75f;
+                flyStreak = 1;
             }
         }
     }

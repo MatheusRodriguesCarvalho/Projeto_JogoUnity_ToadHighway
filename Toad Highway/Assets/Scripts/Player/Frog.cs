@@ -10,14 +10,17 @@ using UnityEngine.SceneManagement;
 
 public class Frog : MonoBehaviour
 {
-    public Rigidbody2D body;
     public int points;
     public bool isdead = false;
     private float moveSapce = 1;
     private int flyStreak = 1;
     private Vector3 target;
 
+    public Rigidbody2D body;
+    public Sprite[] deadSprite;
     public Animator playerAnimator;
+
+    private SpriteRenderer playerSprite;
     private PointsScript ptScript;
     private HungerController hgrControl;
 
@@ -36,6 +39,11 @@ public class Frog : MonoBehaviour
             MovementInbounds();
             transform.position = new Vector3(target.x, target.y, 0f);
         }
+        else
+        {
+            playerAnimator.SetFloat("xinput", 0f);
+            playerAnimator.SetFloat("yinput", 0f);
+        }
     }
 
     void GettingThings()
@@ -44,27 +52,13 @@ public class Frog : MonoBehaviour
         ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
         hgrControl = GetComponent<HungerController>();
         playerAnimator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     public void MovementInbounds()
     {
-        //mathf.clamp(x,1,3);
-        if (target.x > 6)
-        {
-            target.x -= moveSapce;
-        }
-        else if (target.x < -6)
-        {
-            target.x += moveSapce;
-        }
-        else if (target.y > 4)
-        {
-            target.y -= moveSapce;
-        }
-        else if (target.y < -4)
-        {
-            target.y += moveSapce;
-        }
+        target.x = Mathf.Clamp(target.x, -4.1f, 4.1f);
+        target.y = Mathf.Clamp(target.y, -6.1f, 6.1f);
     }
 
     public void MoveHorizontal()
@@ -104,6 +98,11 @@ public class Frog : MonoBehaviour
         Destroy(gameObject);
         isdead = true;
     }
+    public void die()
+    {
+        Destroy(gameObject);
+        isdead = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -116,7 +115,7 @@ public class Frog : MonoBehaviour
                 //Debug.Log("Collision with: " + collision.gameObject.name);
                 //vehicles.StopMovement();
                 kill();
-                SceneManager.LoadScene("MenuPrincipal");
+                //SceneManager.LoadScene("MenuPrincipal");
             }
         }
         else if (collision.gameObject.CompareTag("Fly"))

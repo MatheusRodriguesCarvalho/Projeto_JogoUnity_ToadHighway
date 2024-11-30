@@ -12,7 +12,6 @@ public class HungerController : MonoBehaviour
     public Text hungerUI;
     public Frog player;
 
-
     void Start()
     {
         player = GetComponent<Frog>();
@@ -31,7 +30,7 @@ public class HungerController : MonoBehaviour
         }
         else
         {
-            player.kill();
+            player.die();
         }
     }
 

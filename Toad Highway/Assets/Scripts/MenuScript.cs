@@ -13,11 +13,11 @@ public class MenuScript : MonoBehaviour
             Application.Quit();
         }
     }
-    void OnClickStartGame()
+    public void OnClickStartGame()
     {
         SceneManager.LoadScene("ToadHighway");
     }
-    void OnClickExitGame()
+    public void OnClickExitGame()
     {
         Application.Quit();
     }

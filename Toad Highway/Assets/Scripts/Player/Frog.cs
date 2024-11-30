@@ -13,7 +13,7 @@ public class Frog : MonoBehaviour
     public int points;
     public bool isdead = false;
     private float moveSapce = 1;
-    private int flyStreak = 1;
+    private int flyStreak = 0;
     private Vector3 target;
 
     public Rigidbody2D body;
@@ -57,8 +57,8 @@ public class Frog : MonoBehaviour
 
     public void MovementInbounds()
     {
-        target.x = Mathf.Clamp(target.x, -4.1f, 4.1f);
-        target.y = Mathf.Clamp(target.y, -6.1f, 6.1f);
+        target.x = Mathf.Clamp(target.x, -6f, 6f);
+        target.y = Mathf.Clamp(target.y, -4f, 4f);
     }
 
     public void MoveHorizontal()
@@ -95,13 +95,16 @@ public class Frog : MonoBehaviour
 
     public void kill()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
         isdead = true;
+        playerAnimator.SetBool("hit", true);
+        //TODO CONGELAR A BARRA DE FOME
     }
     public void die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
         isdead = true;
+        playerAnimator.SetBool("starve", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -124,8 +127,8 @@ public class Frog : MonoBehaviour
             if (fly != null)
             {
                 fly.Replace();
+                flyStreak += 1;
                 ptScript.points += 1 * flyStreak;
-                flyStreak *= 2;
                 hgrControl.hunger += 0;
             }
         }
@@ -137,7 +140,7 @@ public class Frog : MonoBehaviour
                 bettle.Hit();
                 ptScript.points += 10;
                 hgrControl.hunger += 5;
-                flyStreak = 1;
+                flyStreak = 0;
             }
         }
         else if (collision.gameObject.CompareTag("Maggot"))
@@ -148,7 +151,7 @@ public class Frog : MonoBehaviour
                 maggot.Catch();
                 ptScript.points += 4;
                 hgrControl.hunger *= 1.75f;
-                flyStreak = 1;
+                flyStreak = 0;
             }
         }
     }

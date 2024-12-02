@@ -43,6 +43,8 @@ public class Frog : MonoBehaviour
         {
             playerAnimator.SetFloat("xinput", 0f);
             playerAnimator.SetFloat("yinput", 0f);
+            //TODO fazer esperar um tempo antes de chamar a cena de Credito
+            SceneManager.LoadScene("Credits");
         }
     }
 

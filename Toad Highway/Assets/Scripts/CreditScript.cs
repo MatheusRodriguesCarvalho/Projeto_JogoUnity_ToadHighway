@@ -7,7 +7,7 @@ public class CreditScript : MonoBehaviour
 {
     void Start()
     {
-        Invoke("WaitToEnd", 9f);
+        Invoke("WaitToEnd", 30f);
     }
 
     void Update()

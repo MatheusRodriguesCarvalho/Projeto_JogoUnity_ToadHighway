@@ -330,8 +330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -1793.81}
-  m_SizeDelta: {x: 700, y: 2314.24}
+  m_AnchoredPosition: {x: 0.000030517578, y: -1630.74}
+  m_SizeDelta: {x: 700, y: 1988.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771837960
 MonoBehaviour:
@@ -366,12 +366,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Criado por \r\nAna Carolina\r\nGuilherme Palmas\r\nMatheus Rodrigues\r\n\r\n\r\nGame
+  m_Text: "Criado por:\r\nAna Carolina\r\nGuilherme Palmas\r\nMatheus Rodrigues\r\n\r\n\r\nGame
     Design:\r\n\r\nAna Carolina\r\nGuilherme Palmas\r\n\r\n\r\nPersonal Assets:\r\n\r\nAna
     Carolina\r\nMatheus Rodrigues\r\n\r\n\r\nPrograma\xE7\xE3o:\r\n\r\nMatheus Rodrigues\r\nGuilherme
-    Palmas\r\n\r\n\n\rAssets de Terceiros\r\n\r\nMusicas:\r\nmanga por manga\r\nmel\xE3o
-    por manga\r\n\r\nEfeitos Sonoros:\r\ncoin collector por manga\r\nchange sound
-    por manga"
+    Palmas\r\n\r\n\r\n\r\nAssets de Terceiros:\r\nhttps://pixabay.com/\r\n\r\n\r\nMusica
+    da gameplay:\r\n\r\npopcorn and videogames\r\nAutor: RetroSunrise\r\n\r\n\r\nQuando
+    o sapo pegar um inseto:\r\n\r\nCollect Points\r\nAutor: Liecio\r\n\r\n\r\nMenu
+    principal:\r\n\r\nA big world\r\nAutor: OnepeopleEntertainment\r\n\r\n\r\nCr\xE9ditos:\r\n\r\nBit
+    Beats 6 (5)\r\nAutor: XtremeFreddy\r"
 --- !u!222 &771837961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -391,6 +393,7 @@ GameObject:
   - component: {fileID: 807949590}
   - component: {fileID: 807949589}
   - component: {fileID: 807949588}
+  - component: {fileID: 807949591}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -472,6 +475,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &807949591
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807949587}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c641ad34bcf06624f9866d04a26e9444, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.35
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1176675720
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,4 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
-
-
 }

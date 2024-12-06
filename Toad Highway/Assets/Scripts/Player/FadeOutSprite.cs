@@ -16,12 +16,12 @@ public class FadeOutSprite : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            Debug.Log("SpriteRenderer found!");
+            //Debug.Log("SpriteRenderer found!");
             originalColor = spriteRenderer.color;
         }
         else
         {
-            Debug.LogError("Sprite Renderer Not Found!");
+            //Debug.LogError("Sprite Renderer Not Found!");
         }
     }
 

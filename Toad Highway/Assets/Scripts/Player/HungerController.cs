@@ -21,7 +21,7 @@ public class HungerController : MonoBehaviour
     }
     void Update()
     {
-        hunger = Mathf.Clamp(hunger, 0f, maxHunger + maxHunger * 0.3f);
+        hunger = Mathf.Clamp(hunger, 0f, maxHunger + 1f);
 
         if (hunger > 0)
         {

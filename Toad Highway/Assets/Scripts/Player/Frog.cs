@@ -77,7 +77,7 @@ public class Frog : MonoBehaviour
             playerAnimator.SetFloat("yinput", 0f);
             AudioPlayer.PlayOneShot(sounds[1]);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             target.x += moveSpace;
             playerAnimator.SetFloat("xinput", 1f);
@@ -87,14 +87,14 @@ public class Frog : MonoBehaviour
     }
     public void MoveVertical()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             target.y += moveSpace;
             playerAnimator.SetFloat("xinput", 0f);
             playerAnimator.SetFloat("yinput", 1f);
             AudioPlayer.PlayOneShot(sounds[1]);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             target.y -= moveSpace;
             playerAnimator.SetFloat("xinput", 0f);
@@ -108,7 +108,7 @@ public class Frog : MonoBehaviour
     {
         isdead = true;
         playerAnimator.SetBool("hit", true);
-        //AudioPlayer.PlayOneShot(sounds[2]);
+        AudioPlayer.PlayOneShot(sounds[2]);
     }
 
     //O Player morreu de fome
@@ -128,7 +128,7 @@ public class Frog : MonoBehaviour
             if (vehicles != null)
             {
                 kill();
-                hgrControl.hunger = 0.1f; // hunger = hunger - maxHunger;
+                hgrControl.hunger = 4f; // hunger = hunger - maxHunger;
             }
         }
         else if (collision.gameObject.CompareTag("Fly"))

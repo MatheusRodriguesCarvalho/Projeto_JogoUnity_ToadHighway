@@ -22,7 +22,7 @@ public class Fly : MonoBehaviour
         int randomY = Random.Range(-3, 0);
         int randomZ = Random.Range(0, 360);
         transform.position = new Vector3(randomX, randomY, randomZ);
-        Debug.Log(randomZ);
+        //Debug.Log(randomZ);
     }
 
 }

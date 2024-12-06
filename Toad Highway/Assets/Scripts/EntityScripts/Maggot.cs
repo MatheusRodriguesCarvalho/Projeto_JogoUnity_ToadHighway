@@ -20,6 +20,6 @@ public class Maggot : MonoBehaviour
     public void Catch()
     {
         //som.Play();
-        Destroy(gameObject, 0.35f);
+        Destroy(gameObject, 0.1f);
     }
 }

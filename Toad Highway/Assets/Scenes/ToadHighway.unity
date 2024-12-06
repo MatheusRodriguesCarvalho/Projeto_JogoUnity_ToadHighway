@@ -350,7 +350,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e96950491bdee0a4d8df1d1ebd840054, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -754,7 +754,6 @@ GameObject:
   - component: {fileID: 817594507}
   - component: {fileID: 817594506}
   - component: {fileID: 817594505}
-  - component: {fileID: 817594504}
   - component: {fileID: 817594511}
   m_Layer: 0
   m_Name: Frog
@@ -763,19 +762,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &817594504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817594503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5d62ef1a61c8343a06c25b48ba406d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeDuration: 2
 --- !u!114 &817594505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1052,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 874546981}
-  - component: {fileID: 874546982}
   - component: {fileID: 874546983}
   m_Layer: 0
   m_Name: EntitySpawner
@@ -1090,18 +1075,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &874546982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874546980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66ccca93e7fcb34ca3c79132502b2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &874546983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1264,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

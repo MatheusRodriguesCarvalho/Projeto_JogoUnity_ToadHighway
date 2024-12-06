@@ -150,8 +150,8 @@ public class Frog : MonoBehaviour
             {
                 AudioPlayer.PlayOneShot(sounds[0]);
                 bettle.Hit();
-                ptScript.points += 10;
-                hgrControl.hunger += 5;
+                ptScript.points += UnityEngine.Random.Range(10, 15);
+                hgrControl.hunger += UnityEngine.Random.Range(5, 10);
                 hgrControl.maxHunger += 1;
                 flyStreak = 0;
             }

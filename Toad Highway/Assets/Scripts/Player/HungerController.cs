@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HungerController : MonoBehaviour
 {
     public float hunger;
-    public float maxHunger = 20f;
+    public float maxHunger = 10f;
 
     public Image hungerBar;
     public Text hungerUI;
@@ -21,7 +21,8 @@ public class HungerController : MonoBehaviour
     }
     void Update()
     {
-        hunger = Mathf.Clamp(hunger, 0f, maxHunger + 1f);
+        maxHunger = Mathf.Clamp(maxHunger, 0f, 30f);
+        hunger = Mathf.Clamp(hunger, 0f, maxHunger);
 
         if (hunger > 0)
         {

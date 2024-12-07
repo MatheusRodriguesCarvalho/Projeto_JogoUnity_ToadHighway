@@ -11,7 +11,7 @@ public class PointsScript : MonoBehaviour
     public int points;
     void Update()
     {
-        PlayerPrefs.SetInt("Record", 0);
+        //PlayerPrefs.SetInt("Record", 0);
         if(points > PlayerPrefs.GetInt("Record"))
         {
             PlayerPrefs.SetInt("Record", points);

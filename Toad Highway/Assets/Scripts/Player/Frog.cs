@@ -151,7 +151,7 @@ public class Frog : MonoBehaviour
                 AudioPlayer.PlayOneShot(sounds[0]);
                 bettle.Hit();
                 ptScript.points += UnityEngine.Random.Range(10, 15);
-                hgrControl.hunger += UnityEngine.Random.Range(5, 10);
+                hgrControl.hunger += UnityEngine.Random.Range(1, 4);
                 hgrControl.maxHunger += 1;
                 flyStreak = 0;
             }
@@ -164,7 +164,7 @@ public class Frog : MonoBehaviour
                 AudioPlayer.PlayOneShot(sounds[0]);
                 maggot.Catch();
                 ptScript.points += 4;
-                hgrControl.hunger *= 1.4f;
+                hgrControl.hunger += 15f;
                 flyStreak = 0;
             }
         }

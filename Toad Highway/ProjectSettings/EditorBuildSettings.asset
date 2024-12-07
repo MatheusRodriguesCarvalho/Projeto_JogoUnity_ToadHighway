@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ToadHighway.unity
     guid: b2109252850752e49a8bf89b73a24564
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 691ef752d23b7ec4bad9b61ddedc1506
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: e6b5c5637243ac24dbb4cfdc78e73580
   m_configObjects: {}

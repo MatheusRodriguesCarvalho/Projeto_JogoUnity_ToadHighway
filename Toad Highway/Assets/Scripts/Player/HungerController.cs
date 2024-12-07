@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HungerController : MonoBehaviour
 {
     public float hunger;
-    public float maxHunger = 10f;
+    public float maxHunger;
 
     public Image hungerBar;
     public Text hungerUI;
@@ -15,6 +15,7 @@ public class HungerController : MonoBehaviour
     void Start()
     {
         player = GetComponent<Frog>();
+        maxHunger = 10f;
         hunger = maxHunger;
         hungerUI.text = "Fome: " + hunger;
 

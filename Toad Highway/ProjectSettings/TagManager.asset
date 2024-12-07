@@ -12,11 +12,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UI_GameOver
   - Water
   - UI
-  - 
-  - 
+  - Cars
+  - Bugs
   - 
   - 
   - 

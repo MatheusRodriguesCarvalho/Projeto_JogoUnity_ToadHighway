@@ -19,9 +19,9 @@ public class EntitySpawner : MonoBehaviour
 
     void SpawnBettle()
     {
-        int randomX = Random.Range( -bettle.x, bettle.x + 1);
-        int randomY = Random.Range( +bettle.y, bettle.y + 2);
-        float randomRotation = Random.Range(0, 360);
+        int randomX = UnityEngine.Random.Range( -bettle.x, bettle.x + 1);
+        int randomY = UnityEngine.Random.Range( +bettle.y, bettle.y + 2);
+        float randomRotation = UnityEngine.Random.Range(0, 360);
 
         var SpawnPoint = new Vector2(randomX, randomY);
         var Rotation = Quaternion.Euler(0f, 0f, randomRotation);
@@ -30,9 +30,9 @@ public class EntitySpawner : MonoBehaviour
     }
     void SpawnMaggot()
     {
-        int randomX = Random.Range(-maggot.x, maggot.x + 1);
+        int randomX = UnityEngine.Random.Range(-maggot.x, maggot.x + 1);
         int randomY = GetRandomValue(-4);
-        float randomRotation = Random.Range(0, 360);
+        float randomRotation = UnityEngine.Random.Range(0, 360);
 
         var SpawnPoint = new Vector2(randomX, randomY);
         var Rotation = Quaternion.Euler(0f, 0f, randomRotation);
@@ -43,7 +43,7 @@ public class EntitySpawner : MonoBehaviour
     void SpawnFly()
     {
         //var SpawnPoint = new Vector2(fly.x, fly.y);
-        float randomRotation = Random.Range(0, 360);
+        float randomRotation = UnityEngine.Random.Range(0, 360);
 
         var SpawnPoint = new Vector2(0, -3);
         var Rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -52,7 +52,7 @@ public class EntitySpawner : MonoBehaviour
 
     int GetRandomValue(int value)
     {
-        int num = Random.Range(0, 3);
+        int num = UnityEngine.Random.Range(0, 3);
         switch (num)
         {
             case 0: return 0;

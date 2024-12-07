@@ -17,6 +17,18 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("ToadHighway");
     }
+
+    public void OnClickShowMenuPrincipal()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
+
+    public void OnClickShowTutorial()
+    {
+        PlayerPrefs.SetInt("Record", 0);
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void OnClickExitGame()
     {
         Application.Quit();

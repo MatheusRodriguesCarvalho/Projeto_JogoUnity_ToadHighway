@@ -19,7 +19,6 @@ public class Vehicles : MonoBehaviour
         body.velocity = new Vector3(speed, 0f, 0f);
     }
 
-
     public void StopMovement()
     {
         speed = 0;

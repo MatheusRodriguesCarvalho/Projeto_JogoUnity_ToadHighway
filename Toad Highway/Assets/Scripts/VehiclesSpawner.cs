@@ -28,7 +28,7 @@ public class VehiclesSpawner : MonoBehaviour
 
     void SetVehicleOrientation()
     {
-        vehicle.speed = Random.Range(3, maxSpeed);
+        vehicle.speed = UnityEngine.Random.Range(3, maxSpeed);
         vehicle.speed = Mathf.Abs(vehicle.speed) * orientacao;
     }
 

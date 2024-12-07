@@ -11,21 +11,36 @@ using UnityEngine.SceneManagement;
 public class Frog : MonoBehaviour
 {
     public int points;
-    public bool isdead = false;
+
+    public bool isDead = false;
+
     private int flyStreak = 0;
+
     private float moveSpace = 1;
+
     private float timer = 0;
+
     private Vector3 target;
 
     public Rigidbody2D body;
+
     public Sprite[] deadSprite;
+
     public Animator playerAnimator;
 
-    [SerializeField] private AudioSource AudioPlayer;
+    public GameObject gameOverPanel;
+    public GameObject playerPanel;
+
+    [SerializeField] private AudioSource audioPlayer;
+
     [SerializeField] private AudioClip[] sounds;
+
     private SpriteRenderer playerSprite;
+
     private PointsScript ptScript;
+
     private HungerController hgrControl;
+
 
     void Start()
     {
@@ -35,7 +50,7 @@ public class Frog : MonoBehaviour
 
     void Update()
     {
-        if (!isdead) // the froggy is very living :)
+        if (!isDead) // the froggy is very living :)
         {
             MoveHorizontal();
             MoveVertical();
@@ -44,9 +59,10 @@ public class Frog : MonoBehaviour
         }
         else // the froggy is no living :(
         {
+            audioPlayer.volume = 0;
             playerAnimator.SetFloat("xinput", 0f);
             playerAnimator.SetFloat("yinput", 0f);
-            LoadCredits();
+            CallGameOver();
         }
     }
 
@@ -57,7 +73,7 @@ public class Frog : MonoBehaviour
         hgrControl = GetComponent<HungerController>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
-        ptScript = GameObject.Find("Pontuation").GetComponent<PointsScript>();
+        ptScript = GameObject.Find("Score").GetComponent<PointsScript>();
     }
 
     //Assegura que o Player ficara confinado dentro do mapa
@@ -75,14 +91,14 @@ public class Frog : MonoBehaviour
             target.x -= moveSpace;
             playerAnimator.SetFloat("xinput", -1f);
             playerAnimator.SetFloat("yinput", 0f);
-            AudioPlayer.PlayOneShot(sounds[1]);
+            audioPlayer.PlayOneShot(sounds[1]);
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             target.x += moveSpace;
             playerAnimator.SetFloat("xinput", 1f);
             playerAnimator.SetFloat("yinput", 0f);
-            AudioPlayer.PlayOneShot(sounds[1]);
+            audioPlayer.PlayOneShot(sounds[1]);
         }
     }
     public void MoveVertical()
@@ -92,31 +108,31 @@ public class Frog : MonoBehaviour
             target.y += moveSpace;
             playerAnimator.SetFloat("xinput", 0f);
             playerAnimator.SetFloat("yinput", 1f);
-            AudioPlayer.PlayOneShot(sounds[1]);
+            audioPlayer.PlayOneShot(sounds[1]);
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             target.y -= moveSpace;
             playerAnimator.SetFloat("xinput", 0f);
             playerAnimator.SetFloat("yinput", -1f);
-            AudioPlayer.PlayOneShot(sounds[1]);
+            audioPlayer.PlayOneShot(sounds[1]);
         }
     }
 
     //O Player morreu atropelado
     public void kill()
     {
-        isdead = true;
+        audioPlayer.PlayOneShot(sounds[2]);
+        isDead = true;
         playerAnimator.SetBool("hit", true);
-        AudioPlayer.PlayOneShot(sounds[2]);
     }
 
     //O Player morreu de fome
     public void die()
     {
-        isdead = true;
+        audioPlayer.PlayOneShot(sounds[2]);
+        isDead = true;
         playerAnimator.SetBool("starve", true);
-        AudioPlayer.PlayOneShot(sounds[2]);
     }
 
     //Valida e verifica se o Player colidiu com algum Objeto
@@ -128,7 +144,7 @@ public class Frog : MonoBehaviour
             if (vehicles != null)
             {
                 kill();
-                hgrControl.hunger = 4f; // hunger = hunger - maxHunger;
+                hgrControl.hunger = 0.2f;
             }
         }
         else if (collision.gameObject.CompareTag("Fly"))
@@ -136,7 +152,7 @@ public class Frog : MonoBehaviour
             Fly fly = collision.GetComponent<Fly>();
             if (fly != null)
             {
-                AudioPlayer.PlayOneShot(sounds[0]);
+                audioPlayer.PlayOneShot(sounds[0]);
                 fly.Replace();
                 flyStreak += 1;
                 ptScript.points += 1 * flyStreak;
@@ -148,7 +164,7 @@ public class Frog : MonoBehaviour
             Bettle bettle = collision.GetComponent<Bettle>();
             if (bettle != null)
             {
-                AudioPlayer.PlayOneShot(sounds[0]);
+                audioPlayer.PlayOneShot(sounds[0]);
                 bettle.Hit();
                 ptScript.points += UnityEngine.Random.Range(10, 15);
                 hgrControl.hunger += UnityEngine.Random.Range(1, 4);
@@ -161,9 +177,9 @@ public class Frog : MonoBehaviour
             Maggot maggot = collision.GetComponent<Maggot>();
             if (maggot != null)
             {
-                AudioPlayer.PlayOneShot(sounds[0]);
+                audioPlayer.PlayOneShot(sounds[0]);
                 maggot.Catch();
-                ptScript.points += 4;
+                ptScript.points += UnityEngine.Random.Range(1, 4);
                 hgrControl.hunger += 15f;
                 flyStreak = 0;
             }
@@ -171,16 +187,15 @@ public class Frog : MonoBehaviour
     }
 
     //Carrega a tela de Creditos dentro de alguns segundos
-    void LoadCredits()
+    void CallGameOver()
     {
         timer += 1f * Time.deltaTime;
 
-        if (timer > 3f)
+        if (timer > 2f)
         {
-            SceneManager.LoadScene("Credits");
+            gameOverPanel.SetActive(true);
+            playerPanel.SetActive(false);
         }
     }
-
-
 
 }
